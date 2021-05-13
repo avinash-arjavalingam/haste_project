@@ -10,4 +10,6 @@ class Node:
 		self.incoming = {}
 		self.outgoing = {}
 
+		self.dep_wait = 0
+
 

@@ -3,6 +3,8 @@
 from hastestructures.edge import Edge
 from hastestructures.node import Node
 from hastestructures.graph import Graph
+from hastestructures.execution_sequence import ExecutionSequence
+from hastestructures.naive_sched import  Naive_Sched
 
 test_graph = Graph()
 
@@ -40,8 +42,11 @@ test_edge_six_nine = test_graph.connect_nodes(6, 9, 0)
 test_edge_seven_nine = test_graph.connect_nodes(7, 9, 0)
 test_edge_eight_nine = test_graph.connect_nodes(8, 9, 0)
 
+test_naive_sched = Naive_Sched()
+test_naive_sched.apply_naive(test_graph)
 
 print((test_graph.get_edge((1, 3))).edge_id)
 print(test_edge_one_three.comm_size)
 print(test_node_one.outgoing[3].edge_id)
-
+print(test_graph.get_start())
+print(test_naive_sched.naive_sequence.get_printable())

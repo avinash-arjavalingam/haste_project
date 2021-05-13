@@ -28,3 +28,16 @@ class Graph:
 		head_node.incoming[tail_node_id] = this_edge
 		self.edges[this_edge.edge_id] = this_edge
 		return this_edge
+
+	def get_start(self):
+		start_nodes_list = []
+		not_start_nodes_list = []
+		for node_id, node in self.nodes.items():
+			node.dep_finished = len(node.incoming)
+			if node.dep_finished == 0:
+				start_nodes_list.append(node_id)
+
+			else:
+				not_start_nodes_list.append(node_id)
+
+		return (start_nodes_list, not_start_nodes_list)
