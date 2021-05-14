@@ -11,5 +11,6 @@ class Node:
 		self.outgoing = {}
 
 		self.dep_wait = 0
+		self.bound = 0
 
 

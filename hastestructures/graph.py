@@ -34,6 +34,7 @@ class Graph:
 		not_start_nodes_list = []
 		for node_id, node in self.nodes.items():
 			node.dep_finished = len(node.incoming)
+			node.bound = 0
 			if node.dep_finished == 0:
 				start_nodes_list.append(node_id)
 
